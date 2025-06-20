@@ -456,7 +456,7 @@
         </button>
       </form>
 
-      <button type="button" class="signup-btn" href="<%= request.getContextPath() %>/signup">
+        <button type="button" class="signup-btn" onclick="window.location.href='<%= request.getContextPath() %>/signup'">
         <i class="fas fa-user-plus"></i>
         <span>Create New Account</span>
       </button>
