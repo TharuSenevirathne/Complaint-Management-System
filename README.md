@@ -14,7 +14,13 @@ It supports:
 
 ## 🛠️ Technology Stack
 
-![System Diagram](/assest/Screenshot 2025-06-20 200336.png)
+| Component | Technology |
+|----------|------------|
+| Frontend | JSP, HTML, CSS, JavaScript (form validation only) |
+| Backend | Jakarta EE (Servlets), Apache Commons DBCP |
+| Database | MySQL (via DBCP connection pool) |
+| Server | Apache Tomcat |
+| Architecture | MVC |
 
 ---
 
@@ -29,17 +35,10 @@ It supports:
 - Submit new complaints.
 - View, edit, or delete own complaints (if unresolved).
 
-  ![System Diagram](/assest/Screenshot 2025-06-20 201454.png)
-  
-
 **Admin:**
 - View all submitted complaints.
 - Update complaint status and add remarks.
 - Delete any complaint.
 
-![System Diagram](/assest/Screenshot 2025-06-20 201045.png)
-
 ---
-
-## 🏗️ Project Structure
 
