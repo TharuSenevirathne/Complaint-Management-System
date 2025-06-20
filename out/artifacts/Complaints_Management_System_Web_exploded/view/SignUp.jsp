@@ -630,7 +630,7 @@
                     <label for="terms">I agree to the <a href="#" target="_blank">Terms & Conditions</a> and <a href="#" target="_blank">Privacy Policy</a></label>
                 </div>
 
-                <button type="submit" class="signup-btn">
+                <button type="submit" class="signup-btn" value="Sign Up">
                     <i class="fas fa-user-plus"></i>
                     <span>Create Account</span>
                 </button>
@@ -678,15 +678,16 @@
                 strengthLabel = 'Weak';
                 break;
             case 2:
+            case 3:
                 strengthClass = 'strength-fair';
                 strengthLabel = 'Fair';
                 break;
-            case 3:
             case 4:
+            case 5:
                 strengthClass = 'strength-good';
                 strengthLabel = 'Good';
                 break;
-            case 5:
+            case 6:
                 strengthClass = 'strength-strong';
                 strengthLabel = 'Strong';
                 break;

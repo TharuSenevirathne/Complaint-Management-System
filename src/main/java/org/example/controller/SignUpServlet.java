@@ -26,13 +26,13 @@ public class SignUpServlet extends HttpServlet {
                 role == null || role.isEmpty()) {
 
             req.setAttribute("error", "All fields are required.");
-            req.getRequestDispatcher("/WEB-INF/views/signup.jsp").forward(req, resp);
+            req.getRequestDispatcher("/view/SignUp.jsp").forward(req, resp);
             return;
         }
 
         if (!password.equals(confirmPassword)) {
             req.setAttribute("error", "Passwords do not match.");
-            req.getRequestDispatcher("/WEB-INF/views/signup.jsp").forward(req, resp);
+            req.getRequestDispatcher("/view/SignUp.jsp").forward(req, resp);
             return;
         }
 
@@ -51,7 +51,7 @@ public class SignUpServlet extends HttpServlet {
 
         if (userIsAlreadyRegistered != null) {
             req.setAttribute("error", "User is already registered.");
-            req.getRequestDispatcher("/WEB-INF/views/signup.jsp").forward(req, resp);
+            req.getRequestDispatcher("/view/SignUp.jsp").forward(req, resp);
             return;
         }
 
@@ -59,11 +59,11 @@ public class SignUpServlet extends HttpServlet {
 
         RequestDispatcher rd;
         if (success) {
-            rd = req.getRequestDispatcher("WEB-INF/views/login.jsp");
+            rd = req.getRequestDispatcher("/view/SignIn.jsp");
             rd.forward(req, resp);
         } else {
             req.setAttribute("error", "Registration failed. Try a different username.");
-            req.getRequestDispatcher("/WEB-INF/views/signup.jsp").forward(req, resp);
+            req.getRequestDispatcher("/view/SignUp.jsp").forward(req, resp);
         }
 
 
@@ -71,7 +71,7 @@ public class SignUpServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/views/signup.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("/view/SignUp.jsp");
         rd.forward(req, resp);
     }
 }

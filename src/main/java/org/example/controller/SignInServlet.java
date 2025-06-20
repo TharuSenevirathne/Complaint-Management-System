@@ -42,7 +42,7 @@ public class SignInServlet extends HttpServlet {
                 resp.sendRedirect(req.getContextPath() + "/complaint");
             } else {
                 req.setAttribute("errorMessage", "Unauthorized role.");
-                req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req, resp);
+                req.getRequestDispatcher("/views/SignIn.jsp").forward(req, resp);
             }
         } else {
             req.setAttribute("errorMessage", "Invalid username or password.");
@@ -52,6 +52,6 @@ public class SignInServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req, resp);
+        req.getRequestDispatcher("/view/SignIn.jsp").forward(req, resp);
     }
 }

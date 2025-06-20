@@ -62,13 +62,13 @@ public class ComplaintsServlet extends HttpServlet {
             List<Complaint> complaints = complaintDAO.findByUserId(userId);
 
             req.setAttribute("complaints", complaints);
-            req.getRequestDispatcher("/WEB-INF/views/dashboard.jsp").forward(req, resp);
+            req.getRequestDispatcher("/view/EmployeeDashboard.jsp").forward(req, resp);
         } else if ("ADMIN".equalsIgnoreCase(role)) {
             ComplaintDAO complaintDAO = new ComplaintDAO(getServletContext());
             List<Complaint> complaints = complaintDAO.findAll();
 
             req.setAttribute("complaints", complaints);
-            req.getRequestDispatcher("WEB-INF/views/admin_dashboard.jsp").forward(req, resp);
+            req.getRequestDispatcher("/view/AdminDashboard.jsp").forward(req, resp);
         }
     }
 }

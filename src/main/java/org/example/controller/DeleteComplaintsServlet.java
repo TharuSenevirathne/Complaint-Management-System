@@ -10,7 +10,7 @@ import org.example.model.dao.ComplaintDAO;
 import java.io.IOException;
 
 @WebServlet("/complaintAction")
-public class DeleteComplaiintsServlet extends HttpServlet {
+public class DeleteComplaintsServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String idParam = req.getParameter("id");

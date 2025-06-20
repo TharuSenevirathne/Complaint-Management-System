@@ -352,11 +352,11 @@
             Streamline your complaint handling process with our modern, efficient, and user-friendly management system. Get started in minutes.
           </p>
           <div class="cta-buttons">
-            <a href="#" class="btn-primary-custom" id="loginBtn">
+            <a href="<%= request.getContextPath() %>/login" class="btn-primary-custom" id="loginBtn" >
               <i class="fas fa-sign-in-alt me-2"></i>
               Login Now
             </a>
-            <a href="#" class="btn-secondary-custom" id="registerBtn">
+            <a href="<%= request.getContextPath() %>/signup" class="btn-secondary-custom" id="registerBtn">
               <i class="fas fa-user-plus me-2"></i>
               Register
             </a>
@@ -538,26 +538,7 @@
     }
   });
 
-  // Button click animations
-  document.getElementById('loginBtn').addEventListener('click', function(e) {
-    e.preventDefault();
-    this.style.transform = 'scale(0.95)';
-    setTimeout(() => {
-      this.style.transform = 'translateY(-3px)';
-      // Here you would typically redirect to login page
-      alert('Redirecting to login page...');
-    }, 100);
-  });
 
-  document.getElementById('registerBtn').addEventListener('click', function(e) {
-    e.preventDefault();
-    this.style.transform = 'scale(0.95)';
-    setTimeout(() => {
-      this.style.transform = 'translateY(-3px)';
-      // Here you would typically redirect to registration page
-      alert('Redirecting to registration page...');
-    }, 100);
-  });
 
   // Interactive dashboard preview
   const previewItems = document.querySelectorAll('.preview-item');

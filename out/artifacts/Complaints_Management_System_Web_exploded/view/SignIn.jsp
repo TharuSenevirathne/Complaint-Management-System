@@ -387,6 +387,22 @@
       to { transform: rotate(360deg); }
     }
   </style>
+
+  <script>
+    // Form validation and submission
+    function validateLoginForm() {
+      const username = document.forms["loginForm"]["username"].value.trim();
+      const password = document.forms["loginForm"]["password"].value.trim();
+
+      if (username === "" || password === "") {
+        showError("Please enter both username and password.");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+
 </head>
 <body>
 
@@ -435,13 +451,13 @@
           </div>
         </div>
 
-        <button type="submit" class="login-btn">
+        <button type="submit" class="login-btn" value="Login">
           <i class="fas fa-sign-in-alt"></i>
           <span>Sign In</span>
         </button>
       </form>
 
-      <button type="button" class="signup-btn" onclick="redirectToSignup()">
+      <button type="button" class="signup-btn" href="<%= request.getContextPath() %>/signup">
         <i class="fas fa-user-plus"></i>
         <span>Create New Account</span>
       </button>
@@ -467,26 +483,6 @@
     });
     event.currentTarget.classList.add('active');
   }
-
-  function redirectToSignup() {
-    // You can change this URL to your actual signup page
-    request.getContextPath() + '/signup';
-    // Or you can use: window.open('signup.html', '_blank'); to open in new tab
-  }
-
-  // Form validation and submission
-  function validateLoginForm() {
-    const username = document.forms["loginForm"]["username"].value.trim();
-    const password = document.forms["loginForm"]["password"].value.trim();
-
-    if (username === "" || password === "") {
-      showError("Please enter both username and password.");
-      return false;
-    }
-
-    return true;
-  }
-
 
   function showError(message) {
     const errorDiv = document.getElementById('errorMessage');

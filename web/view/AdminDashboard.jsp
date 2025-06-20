@@ -33,10 +33,12 @@
     <meta name="keywords" content="html, css,bootstrap, javascript,java,javaee,servlet,jsp,dbcp,tomcat,intelijIDEA, pos web, complain management system, web development, software engineering, computer science">
     <meta name="description" content="This website is a Complain Management system Web Application designed to manage complains efficiently.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <title>Admin Dashboard - Complaint Management System</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Bell MT", sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
@@ -52,12 +54,12 @@
         }
 
         h1, h2 {
-            color: #004080;
+            color: white;
             margin-bottom: 20px;
         }
 
         .admin-header {
-            background: linear-gradient(135deg, #004080, #0066cc);
+            background: #f44848;
             color: white;
             padding: 20px;
             border-radius: 10px;
@@ -99,7 +101,7 @@
         }
 
         form input[type="submit"] {
-            background-color: #004080;
+            background-color: #f44848;
             color: white;
             padding: 12px;
             border: none;
@@ -118,7 +120,7 @@
         }
 
         .cancel-btn {
-            background-color: #808080;
+            background-color: #000000;
             color: white;
             padding: 12px;
             border: none;
@@ -148,7 +150,7 @@
         }
 
         th {
-            background-color: #004080;
+            background-color: #f44848;
             color: white;
         }
 
@@ -163,7 +165,7 @@
         }
 
         .update-link {
-            background-color: #FFA500;
+            background-color: #2866ed;
             color: white;
             text-decoration: none;
             font-weight: bold;
@@ -175,7 +177,7 @@
         }
 
         .update-link:hover {
-            background-color: #FF8C00;
+            background-color: #081775;
         }
 
         .delete-link {
@@ -208,7 +210,7 @@
 
         .employee-column {
             font-weight: bold;
-            color: #004080;
+            color: #f44848;
         }
 
         .update-form-container {
@@ -216,7 +218,7 @@
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 30px;
-            border: 2px solid #FFA500;
+            border: 2px solid #0abff6;
         }
 
         .logout-btn {
@@ -241,9 +243,8 @@
 <body>
 <div class="container">
     <div class="admin-header">
-        <h1>
-            Admin Dashboard - <%= username != null ? username : "Administrator" %>
-            <a class="logout-btn" href="<%= request.getContextPath() %>/logout">Logout</a>
+        <i class="fa-solid fa-user-secret"></i>
+            Admin Dashboard
         </h1>
         <p>Complaint Management System</p>
     </div>
@@ -387,6 +388,9 @@
             }
         %>
     </table>
+    <br><br>
+    <a class="logout-btn" href="<%= request.getContextPath() %>/login">Logout</a>
+
 </div>
 
 <script>

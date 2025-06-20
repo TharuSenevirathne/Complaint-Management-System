@@ -32,9 +32,11 @@
     <meta name="description" content="This website is a Complain Management system Web Application designed to manage complains efficiently.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Dashboard - Complaint Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Bell MT", sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
@@ -50,7 +52,7 @@
         }
 
         h1, h2 {
-            color: #004080;
+            color: #f44848;
             margin-bottom: 20px;
         }
 
@@ -66,7 +68,7 @@
         }
 
         form input[type="submit"] {
-            background-color: #004080;
+            background-color: #f44848;
             color: white;
             padding: 12px;
             border: none;
@@ -77,7 +79,7 @@
         }
 
         form input[type="submit"]:hover {
-            background-color: #003060;
+            background-color: #f44848;
         }
 
         form input[type="submit"].update-btn {
@@ -89,7 +91,7 @@
         }
 
         .cancel-btn {
-            background-color: #808080;
+            background-color: #756666;
             color: white;
             padding: 12px;
             border: none;
@@ -120,7 +122,7 @@
         }
 
         th {
-            background-color: #004080;
+            background-color: #f44848;
             color: white;
         }
 
@@ -214,9 +216,9 @@
 
 <body>
 <div class="container">
-    <h1>
-        Welcome, <%= username != null ? username : "Employee" %>
-        <a class="logout-btn" href="<%= request.getContextPath() %>/logout">Logout</a>
+    <h1><i class="fa-solid fa-user"></i>
+        Welcome to Employee Dashboard</h1>
+
     </h1>
 
     <h2><%= editComplaint != null ? "Update Complaint" : "Submit a New Complaint" %></h2>
@@ -294,6 +296,9 @@
             }
         %>
     </table>
+
+    <br><br>
+    <a class="logout-btn" href="<%= request.getContextPath() %>/login">Logout</a>
 </div>
 
 <script>
