@@ -405,7 +405,6 @@
 
 </head>
 <body>
-
 <div class="container-fluid">
   <div class="login-wrapper">
     <div class="left-panel">
