@@ -22,6 +22,8 @@ It supports:
 | Server | Apache Tomcat |
 | Architecture | MVC |
 
+
+<img src = "assest/Screenshot 2025-06-20 200336.png">
 ---
 
 ## 🚀 Features
@@ -30,15 +32,24 @@ It supports:
 - Secure user login with session handling.
 - Role-based dashboards for Admin and Employee.
 
+
+  <img src = "assest/Screenshot 2025-06-20 202251.png"><br><br>
+
+  <img src = "assest/Screenshot 2025-06-20 202332.png">
+
 ### 📋 Complaint Management
 **Employee:**
 - Submit new complaints.
 - View, edit, or delete own complaints (if unresolved).
 
+  <img src = "assest/Screenshot 2025-06-20 201454.png">
+
 **Admin:**
 - View all submitted complaints.
 - Update complaint status and add remarks.
 - Delete any complaint.
+
+<img src = "assest/Screenshot 2025-06-20 201045.png">
 
 ---
 
