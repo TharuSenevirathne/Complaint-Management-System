@@ -417,18 +417,7 @@
         Invalid credentials. Please try again.
       </div>
 
-      <form action="login" method="POST" id="loginForm">
-        <div class="role-tabs">
-          <button type="button" class="role-tab active" onclick="selectRole('employee')">
-            <i class="fas fa-user"></i>
-            <span>Employee</span>
-          </button>
-          <button type="button" class="role-tab" onclick="selectRole('admin')">
-            <i class="fas fa-user-shield"></i>
-            <span>Admin</span>
-          </button>
-        </div>
-        <input type="hidden" name="role" id="selectedRole" value="employee">
+      <form name="loginForm" action="<%= request.getContextPath() %>/login" method="post" onsubmit="return validateLoginForm()">
 
         <div class="input-group">
           <label class="input-label" for="username">Username</label>
@@ -467,18 +456,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script>
-  function selectRole(role) {
-    // Remove active class from all tabs
-    document.querySelectorAll('.role-tab').forEach(tab => {
-      tab.classList.remove('active');
-    });
-
-    // Add active class to clicked tab
-    event.currentTarget.classList.add('active');
-
-    // Set hidden input value
-    document.getElementById('selectedRole').value = role;
-  }
 
   function changeTheme(primary, primaryDark) {
     document.documentElement.style.setProperty('--primary', primary);
@@ -493,46 +470,23 @@
 
   function redirectToSignup() {
     // You can change this URL to your actual signup page
-    window.location.href = 'signup.html';
+    request.getContextPath() + '/signup';
     // Or you can use: window.open('signup.html', '_blank'); to open in new tab
   }
 
   // Form validation and submission
-  document.getElementById('loginForm').addEventListener('submit', function(e) {
-    const username = document.getElementById('username').value.trim();
-    const password = document.getElementById('password').value.trim();
-    const role = document.getElementById('selectedRole').value;
+  function validateLoginForm() {
+    const username = document.forms["loginForm"]["username"].value.trim();
+    const password = document.forms["loginForm"]["password"].value.trim();
 
-    if (!username || !password) {
-      e.preventDefault();
-      showError('Please fill in all fields.');
+    if (username === "" || password === "") {
+      showError("Please enter both username and password.");
       return false;
     }
 
-    if (username.length < 3) {
-      e.preventDefault();
-      showError('Username must be at least 3 characters long.');
-      return false;
-    }
+    return true;
+  }
 
-    if (password.length < 4) {
-      e.preventDefault();
-      showError('Password must be at least 4 characters long.');
-      return false;
-    }
-
-    // Show loading state
-    const submitBtn = document.querySelector('.login-btn');
-    const originalContent = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<div class="loading"></div> Signing In...';
-    submitBtn.disabled = true;
-
-    // Simulate form submission delay
-    setTimeout(() => {
-      submitBtn.innerHTML = originalContent;
-      submitBtn.disabled = false;
-    }, 2000);
-  });
 
   function showError(message) {
     const errorDiv = document.getElementById('errorMessage');
