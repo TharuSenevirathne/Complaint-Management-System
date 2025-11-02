@@ -23,6 +23,7 @@ public class AdminServlet extends HttpServlet {
                 String status = req.getParameter("status");
                 String remarks = req.getParameter("remarks");
 
+
                 Complaint complaint = new Complaint();
                 complaint.setId(id);
                 complaint.setStatus(status);
